@@ -16,8 +16,9 @@ $renderOptions = function($options) use ($value) {
 		}
 		$params = (object) $params;
 		$attribs = $params->attribs ?? '';
+		$title = $params->title ?? '';
 		$selected = ($value === $optionValue) || ($value === ''.$optionValue);
-		?><option value="<?= $optionValue ?>" <?= ($selected) ? 'selected' : '' ?> <?= $attribs ?>><?= htmlentities($params->title) ?></option><?php
+		?><option value="<?= $optionValue ?>" <?= ($selected) ? 'selected' : '' ?> <?= $attribs ?>><?= htmlentities($title) ?></option><?php
 	endforeach;
 }
 
