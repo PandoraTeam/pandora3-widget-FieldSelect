@@ -25,7 +25,7 @@ $renderOptions = function($options) use ($value) {
 ?><div class="select-wrap <?= $disabled ? 'disabled' : '' ?>"><?php
 	// aria-labelledby=""
 	?><select name="<?= $name ?>" <?= ($class) ? 'class="'.$class.'"' : '' ?> <?= $attribs ?>><?php
-		if ($groupOptions) {
+		if ($groupOptions && $options) {
 			foreach ($options as $groupTitle => $subOptions):
 				?><optgroup label="<?= htmlentities($groupTitle) ?>"><?php
 					echo $renderOptions($subOptions);

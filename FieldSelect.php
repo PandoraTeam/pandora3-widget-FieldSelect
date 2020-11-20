@@ -53,6 +53,10 @@ class FieldSelect extends FormField {
 	 * {@inheritdoc}
 	 */
 	protected function beforeRender(array $context): array {
+		if ($context['id'] ?? '') {
+			$attribs = $context['attribs'] ?? '';
+			$context['attribs'] = $attribs.' id="'.$context['id'].'"';
+		}
 		if ($context['submitOnChange'] ?? false) {
 			$attribs = $context['attribs'] ?? '';
 			$context['attribs'] = $attribs.' onchange="this.form.submit()"';
